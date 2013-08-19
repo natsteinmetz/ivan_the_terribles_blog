@@ -55,3 +55,6 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'rack-mini-profiler'
+gem 'will_paginate', '~> 3.0'
