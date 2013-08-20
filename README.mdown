@@ -1,9 +1,17 @@
-# My New Blog!
+# Ivan's Terrible Blog
 
-I've got a lot to say, and now I have a place to say it!!!!!
+By [Nathalie Steinmetz](http://www.linkedin.com/in/nathaliesteinmetz).
 
-Read all my amazing posts!!!!! You can load them into the app with: `rake load_blog:load_shit`
+## Description
+**Ivan's Terrible Blog** is a CodeFellows app that we worked on to improve performance. The initial project loaded a large amount of blog posts, all their comments and comment replies on the main index page.
 
-Since I know you want to read them all, I designed my page to show EVERYTHING on the front page of the site!!!!!
+To measure performance I use mini-profiler. To improve performance I use pagination, and only show 10 full posts per page. The comments and comment replies are accessible when showing a post in detail. Besides pagination I use memcache and cache fragments to cache the blog posts and comments in memory.
 
-I know it is a little slow (but totes worth it!!!!)... _Do you know how I can make it faster?_
+
+## Information
+
+![screenshot ivan's terrible blog] (lib/assets/screenshot_terrible_blog.png)
+
+## License
+
+[MIT License] (LICENSE.txt)
