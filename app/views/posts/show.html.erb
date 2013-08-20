@@ -8,6 +8,21 @@
 <p>
   <b>Body:</b>
   <%= @post.body %>
+
+  <div class="comment">
+      <h4>Comments:</h4>
+      <% @post.comments.includes(:replies).each do |c| %>
+        <p><%= c.body %></p>
+        <div class="post_nav">
+          <div class="reply">
+            <h5>Replies</h5>
+            <% c.replies.each do |r| %>
+              <p><%= r.body %></p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
 </p>
 
 
