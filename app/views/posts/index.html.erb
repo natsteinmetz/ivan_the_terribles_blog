@@ -1,17 +1,19 @@
 <h1>Ivan the Terrible's Blog</h1>
 <br>
 <section class="blog">
-<% @posts.each do |post| %>
-  <section class="post">
-    <h2><%= post.title %></h2>
-    <div><%= post.body %></div>
-    <div class="post_nav">
-      <%= link_to 'Show', post %> |
-      <%= link_to 'Edit', edit_post_path(post) %> |
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-  </section>
-<% end %>
+ <% cache do %>
+    <% @posts.each do |post| %>
+      <section class="post">
+        <h2><%= post.title %></h2>
+        <div><%= post.body %></div>
+        <div class="post_nav">
+          <%= link_to 'Show', post %> |
+          <%= link_to 'Edit', edit_post_path(post) %> |
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </section>
+    <% end %>
+  <% end %>
 <br />
 
 <%= will_paginate @posts %>

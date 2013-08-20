@@ -58,3 +58,6 @@ end
 
 gem 'rack-mini-profiler'
 gem 'will_paginate', '~> 3.0'
+gem 'dalli'
+gem 'memcachier'
+
