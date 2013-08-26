@@ -164,14 +164,14 @@ p {
     <th>Checks Performed</th>
   </tr>
   <tr>
-    <td>/Users/ivan/dev/ivan_the_terribles_blog</td>
+    <td>/Users/nathalie/Github/ivan_the_terribles_blog</td>
     <td>3.2.13</td>
-    <td>2.0.0
+    <td>2.1.1
     <td>
-      2013-06-18 11:46:20 -0700<br><br>
-      0.265889 seconds
+      2013-08-25 18:06:40 -0700<br><br>
+      0.418771 seconds
     </td>
-    <td>BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserialize, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, JRubyXML, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttributes, ModelSerialize, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoS, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, YAMLParsing</td>
+    <td>BasicAuth, ContentTag, CrossSiteScripting, DefaultRoutes, Deserialize, DigestDoS, EscapeFunction, Evaluation, Execute, FileAccess, FilterSkipping, ForgerySetting, JRubyXML, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, QuoteTableName, Redirect, Render, ResponseSplitting, SQL, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionSettings, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoS, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, YAMLParsing</td>
   </tr>
 </table>
 <br>
@@ -183,7 +183,7 @@ p {
   </tr>
   <tr>
     <td>Controllers</td>
-    <td>5</td>
+    <td>4</td>
   </tr>
   <tr>
     <td>Models</td>
@@ -191,7 +191,7 @@ p {
   </tr>
   <tr>
     <td>Templates</td>
-    <td>17</td>
+    <td>16</td>
   </tr>
   <tr>
     <td>Errors</td>
@@ -199,19 +199,20 @@ p {
   </tr>
   <tr>
     <td>Security Warnings</td>
-    <td>3 <span class='high-confidence'>(2)</span></td>
+    <td>1 <span class='high-confidence'>(1)</span></td>
   </tr>
+  
+  <tr>
+    <td>Ignored Warnings</td>
+    <td>0</td>
+  </tr>
+  
 </table>
 <br>
 <table>
   <tr>
     <th>Warning Type</th>
     <th>Total</th>
-  </tr>
-  
-  <tr>
-    <td>SQL Injection</td>
-    <td>2</td>
   </tr>
   
   <tr>
@@ -274,174 +275,6 @@ p {
             </td>
             <td class='context'>
               <pre class='context'>IvanTheTerriblesBlog::Application.config.secret_token = &#39;8101480f283e383e22fb5331faa54551140038a6ded1059d8168fdfddbd7704ca409a0d53c6d2696afbc8d7c147285be48678620084d38f21bf114f34483dae8&#39;</pre>
-            </td>
-          </tr>
-</table></div></td>
-  </tr>
-  
-  <tr>
-    <td><span class='high-confidence'>High</span></td>
-    <td>SearchController</td>
-    <td>index</td>
-    <td><a rel="no-referrer" href="http://brakemanscanner.org/docs/warning_types/sql_injection/">SQL Injection</a></td>
-    <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" >Possible SQL injection near line 3: Post.where(&quot;body like &#39;%#{<span class="user_input">params[:q]</span>}%&#39;&quot;)<table id='context2' class='context' style='display:none'><caption>app/controllers/search_controller.rb</caption>        <tr class='context first'>
-          <td class='context_line'>
-            <pre class='context'>1</pre>
-          </td>
-          <td class='context'>
-            <pre class='context'>class SearchController &lt; ApplicationController</pre>
-          </td>
-        </tr>
-          <tr class='context alt near_error'>
-            <td class='context_line'>
-              <pre class='context'>2</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>  def index</pre>
-            </td>
-          </tr>
-          <tr class='context error'>
-            <td class='context_line'>
-              <pre class='context'>3</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    @posts = Post.where(&quot;body like &#39;%#{params[:q]}%&#39;&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context alt near_error'>
-            <td class='context_line'>
-              <pre class='context'>4</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    logger.info(&quot;First Posts count is #{@posts.count}&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>5</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    logger.info(&quot;Params q is #{params[:q]}&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>6</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    @posts = Post.where(&quot;body like &#39;%lorem%&#39;&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>7</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    logger.info(&quot;Lorem Posts count is #{@posts.count}&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>8</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>  end</pre>
-            </td>
-          </tr>
-</table></div></td>
-  </tr>
-  
-  <tr>
-    <td><span class='med-confidence'>Medium</span></td>
-    <td>Post</td>
-    <td>Post.search</td>
-    <td><a rel="no-referrer" href="http://brakemanscanner.org/docs/warning_types/sql_injection/">SQL Injection</a></td>
-    <td><div class='warning_message' onClick="toggle('context3');toggle('message3');toggle('full_message3')" >Possible SQL injection near line 12: where(&quot;title like &#39;%#{<span class="user_input">(local search)</span>}%&#39;&quot;)<table id='context3' class='context' style='display:none'><caption>app/models/post.rb</caption>        <tr class='context first'>
-          <td class='context_line'>
-            <pre class='context'>7</pre>
-          </td>
-          <td class='context'>
-            <pre class='context'>      #safe</pre>
-          </td>
-        </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>8</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>      #find(:all, :conditions =&gt; [&#39;title like ?&#39;, &quot;%#{search}%&quot;])</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>9</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>      #where(&quot;title like ?&quot;, &quot;%#{search}%&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>10</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>      #</pre>
-            </td>
-          </tr>
-          <tr class='context near_error'>
-            <td class='context_line'>
-              <pre class='context'>11</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>      #unsafe - SQL injection</pre>
-            </td>
-          </tr>
-          <tr class='context alt error'>
-            <td class='context_line'>
-              <pre class='context'>12</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>      where(&quot;title like &#39;%#{search}%&#39;&quot;)</pre>
-            </td>
-          </tr>
-          <tr class='context near_error'>
-            <td class='context_line'>
-              <pre class='context'>13</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    else</pre>
-            </td>
-          </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>14</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>      find(:all)</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>15</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>    end</pre>
-            </td>
-          </tr>
-          <tr class='context alt'>
-            <td class='context_line'>
-              <pre class='context'>16</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>  end</pre>
-            </td>
-          </tr>
-          <tr class='context'>
-            <td class='context_line'>
-              <pre class='context'>17</pre>
-            </td>
-            <td class='context'>
-              <pre class='context'>end</pre>
             </td>
           </tr>
 </table></div></td>

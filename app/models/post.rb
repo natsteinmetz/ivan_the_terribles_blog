@@ -5,11 +5,11 @@ class Post < ActiveRecord::Base
   def self.search(search)
     if search
       #safe
-      #find(:all, :conditions => ['title like ?', "%#{search}%"])
+      find(:all, :conditions => ['title like ?', "%#{search}%"])
       #where("title like ?", "%#{search}%")
       #
       #unsafe - SQL injection
-      includes(comments: :replies).where("title like '%#{search}%'")
+      #includes(comments: :replies).where("title like '%#{search}%'")
     else
       includes(comments: :replies)
     end
